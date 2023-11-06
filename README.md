@@ -1,5 +1,5 @@
 # Commands
-Commands I use regularly and cba to learn the command line arguments for.
+Commands I use regularly.
 
 Currently includes:
 1. yt-dlp
