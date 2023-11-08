@@ -108,7 +108,7 @@ elif menu == "3":
     string1 = None
     string2 = None
 
-    print("pick a Version:")
+    print("Pick a Version:")
     print("1. Lion")
     print("2. Mountain Lion")
     print("3. Mavericks")
