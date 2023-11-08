@@ -2,6 +2,7 @@ import os
 
 print("1: yt-dlp")
 print("2: ffmpeg convert")
+print("3: macrecovery")
 print("U: update executables")
 menu = input("Select an option: ")
 #UPDATER
@@ -103,6 +104,61 @@ elif menu == "2":
     file1 = "1." + option
     file2 = "2." + choice
     os.system("/opt/homebrew/bin/ffmpeg -i " + file1 + " " + file2)
+elif menu == "3":
+    string1 = None
+    string2 = None
+
+    print("pick a Version:")
+    print("1. Lion")
+    print("2. Mountain Lion")
+    print("3. Mavericks")
+    print("4. Yosemite")
+    print("5. El Capitan")
+    print("6. Sierra")
+    print("7. High Sierra")
+    print("8. Mojave")
+    print("9. Catalina")
+    print("10. Big Sur")
+    print("11. Monterey")
+    print("12. Ventura")
+    ver = input("...")
+    if ver == "1":
+        string1 = "Mac-2E6FAB96566FE58C"
+        string2 = "00000000000F25Y00"
+    if ver == "2":
+        string1 = "Mac-7DF2A3B5E5D671ED"
+        string2 = "00000000000F65100"
+    if ver == "3":
+        string1 = "Mac-F60DEB81FF30ACF6"
+        string2 = "00000000000FNN100"
+    if ver == "4":
+        string1 = "Mac-E43C1C25D4880AD6"
+        string2 = "00000000000GDVW00"
+    if ver == "5":
+        string1 = "Mac-FFE5EF870D7BA81A"
+        string2 = "00000000000GQRX00"
+    if ver == "6":
+        string1 = "Mac-77F17D7DA9285301"
+        string2 = "00000000000J0DX00"
+    if ver == "7":
+        string1 = "Mac-7BA5B2D9E42DDD94"
+        string2 = "00000000000J80300"
+    if ver == "8":
+        string1 = "Mac-7BA5B2DFE22DDD8C"
+        string2 = "00000000000KXPG00"
+    if ver == "9":
+        string1 = "Mac-00BE6ED71E35EB86"
+        string2 = "00000000000000000"
+    if ver == "10":
+        string1 = "Mac-42FD25EABCABB274"
+        string2 = "00000000000000000"
+    if ver == "11":
+        string1 = "Mac-FFE5EF870D7BA81A"
+        string2 = "00000000000000000"
+    if ver == "12":
+        string1 = "Mac-4B682C642B45593E"
+        string2 = "00000000000000000"
+    os.system("python3 macrecovery.py -b " + string1 + " -m " + string2 + " download")
 #Throw and Callback
 else:
     print("not an option")
