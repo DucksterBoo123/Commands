@@ -13,10 +13,20 @@ if menu == "U":
 elif menu == "1":
     URL = input("Paste your YT Link: ")
     output = input("Name the file: ")
-    os.system(""" yt-dlp -f "bestaudio[ext=wav]/bestaudio" "{}" -o "output.%(ext)s" """.format(URL))
-    os.system("ffmpeg -i output.webm output.wav")
-    os.remove("output.webm")
-    os.rename("output.wav", "{}.wav".format(output))
+    #os.system(""" yt-dlp -f "bestaudio[ext=wav]/bestaudio" "{}" -o "output.%(ext)s" """.format(URL))
+    os.system(""" /opt/homebrew/Cellar/youtube-dl/2021.12.17/bin/youtube-dl -f "bestaudio[ext=wav]/bestaudio" "{}" -o "output.%(ext)s" """.format(URL))
+    try:
+        os.system("/opt/homebrew/bin/ffmpeg -i output.webm output.wav")
+        os.remove("output.webm")
+        os.rename("output.wav", "{}.wav".format(output))
+    except:
+        print("No audio file is present, did you try exporting a video?")
+        try:
+            os.system("/opt/homebrew/bin/ffmpeg -i output.m4a output.mp4")
+            os.remove("output.m4a")
+            os.rename("output.mp4", "{}.mp4".format(output))
+        except:
+            print("No video file is present, you done goofed.")
 #FFMPEG
 elif menu == "2":
     print ("Choose your input type:")
